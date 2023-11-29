@@ -1,0 +1,43 @@
+# 필요한 라이브러리 설치
+pip install opencv-python tensorflow
+
+import cv2
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras.models import load_model
+
+# 훈련된 모델 로드
+model = load_model('path/to/your/sign_model.h5')
+
+# 표지판 클래스
+classes = ['stop', 'yield', 'speed_limit_30', 'speed_limit_60', 'speed_limit_100', 'no_entry', 'crosswalk']
+
+def preprocess_image(image_path):
+    # 이미지 전처리
+    img = cv2.imread(image_path)
+    img = cv2.resize(img, (224, 224))
+    img = img / 255.0
+    img = np.expand_dims(img, axis=0)
+    return img
+
+def recognize_sign(image_path):
+    # 이미지 전처리
+    img = preprocess_image(image_path)
+
+    # 모델로 예측
+    predictions = model.predict(img)
+    
+    # 클래스 인덱스 가져오기
+    predicted_class_index = np.argmax(predictions)
+
+    # 클래스 레이블 가져오기
+    predicted_class = classes[predicted_class_index]
+
+    # 예측 결과 출력
+    print(f'Predicted Sign: {predicted_class}')
+
+# 이미지 파일 경로
+image_path = 'path/to/your/test_image.jpg'
+
+# 표지판 인식 실행
+recognize_sign(image_path)
