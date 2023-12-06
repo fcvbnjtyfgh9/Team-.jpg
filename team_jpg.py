@@ -27,9 +27,9 @@ def detect_traffic_lights(image_path):
             
             # 색상 판별
             if mean_color[0] > 0 and mean_color[0] < 20: 
-                cv2.putText(image, 'Red', (i[0], i[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
-            elif mean_color[0] > 60 and mean_color[0] < 80:  
-                cv2.putText(image, 'Green', (i[0], i[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
+                cv2.putText(image, 'Red', (i[0], i[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
+            elif mean_color[0] > 75 and mean_color[0] < 80:  
+                cv2.putText(image, 'Green', (i[0], i[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
     
   
     cv2.imshow('Detected Traffic Lights', image)
@@ -37,5 +37,5 @@ def detect_traffic_lights(image_path):
     cv2.destroyAllWindows()
 
 
-image_path = 'C:\\Users\\user\\image\\light3.jpg'
+image_path = r'C:\Users\user\image\test3.png'
 detect_traffic_lights(image_path)
