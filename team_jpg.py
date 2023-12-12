@@ -12,7 +12,7 @@ def detect_traffic_lights(image_path):
     
     blurred = cv2.GaussianBlur(gray, (5, 5), 0)
     
-    circles = cv2.HoughCircles(blurred, cv2.HOUGH_GRADIENT, dp=1, minDist=20, param1=200, param2=35, minRadius=10, maxRadius=40)
+    circles = cv2.HoughCircles(blurred, cv2.HOUGH_GRADIENT, dp=1, minDist=80, param1=200, param2=11, minRadius=14, maxRadius=40)
     
     if circles is not None:
         circles = np.uint16(np.around(circles))
@@ -26,9 +26,9 @@ def detect_traffic_lights(image_path):
             mean_color = cv2.mean(roi)
             
             # 색상 판별
-            if mean_color[0] > 0 and mean_color[0] < 20: 
+            if mean_color[0] > 130 and mean_color[0] < 180: 
                 cv2.putText(image, 'Red', (i[0], i[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
-            elif mean_color[0] > 75 and mean_color[0] < 80:  
+            elif mean_color[0] > 80 and mean_color[0] < 90:  
                 cv2.putText(image, 'Green', (i[0], i[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
     
     cv2.imshow('Detected Traffic Lights', image)
