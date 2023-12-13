@@ -2,7 +2,7 @@
 ---
 Term_project.py: 정은수  
 
-traffic_ligh.py: 박나경  
+traffic_light.py: 박나경  
 
 sign_detection.py: 길은지  
 
