@@ -7,7 +7,7 @@
 **결과**: ![result](https://i.ibb.co/1md9qd1/Clipboard-Image-2023-12-13-170154.png)
 
 
-**실행 방법**: opencv와 tesseract를 설치한  뒤 team_jpg.py 코드를 실행.
+**실행 방법**: opencv와 tesseract를 설치한  뒤 team_jpg.py 코드를 실행. ※이미지 파일 경로와 tesseract 파일 경로를 수정하고 실행해야 함.
 
 **메인 소스 코드**: team_jpg.py 코드가 최종 완성 코드이며, 세부 코드들은 조원끼리 파트를 나누어 작업함. 세부 코드들은 Details 폴더 속에 기재되어 있음.
 
