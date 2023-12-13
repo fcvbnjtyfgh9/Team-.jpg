@@ -14,7 +14,7 @@
 **사용한 이미지**: image 폴더 속에 저장되어 있음.
 
 **사용한 프로그램**: opencv, python, tesseract(글자 인식) - https://github.com/UB-Mannheim/tesseract.git
-음
+
 **사용 패키지 및 버전**: python 3.11.5, opencv-python 4.8.1.78, tesseract 0,1,3
 
 ---
